@@ -1,0 +1,97 @@
+npm init -y
+
+npm i -D webpack
+
+修改默认webpack.config.js 文件名     dev:webpack --config webpack.config.dev.js  
+
+
+npm i -D html-webpack-plugin  自动生成index.html 
+
+
+connect react
+npm i -S react react-dom
+
+安装 npm i -D babel-loader  babel-core  //解析JSX 
+
+options 预设    react     npm i - D babel-preset-react
+
+
+devServer    npm i -D webpack-dev-server    npm start    直接运行   
+
+
+ "devDependencies": {
+    "babel-core": "^6.26.0",解析jsx
+    "babel-loader": "^7.1.2",解析jsx
+    "babel-preset-react": "^6.24.1", 解析jsx
+    "html-webpack-plugin": "^2.30.1", 自动生成html打包模型
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0"
+  }
+
+
+
+
+  引入css
+
+  npm i -D css-loader
+  npm i -D style-loader
+
+  引入图片
+  npm i -D file-loader
+  增强
+  npm i -D url-loader
+
+
+
+  配置css 模块化
+  {
+                test: /\.css$/,
+                use: ['style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            module: true,
+                            localIdentName:'[path]-[name]-[local]-[hash:base64:6]'
+                        }
+                    }
+                ],
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'src/common')
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+                include:[
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'src/common')
+                ]
+            },
+
+配置sass-loader
+
+npm i -D sass-loader  node-sass   
+
+scss 文件  
+
+
+npm i -D less-loader    less
+
+
+增加babel
+npm i  babel-preset-env -D
+
+直接配置 /\js$/
+
+babel-preset-env  插件只能加载已经  正式入册的功能
+
+babel-plugin-transform-object-rest-spread   ...a  展开运算未入册  需要实验性插件
+
+
+自动删除dist 每次打包之前的文件
+
+npm  i  clean-webpack-plugin -D
+
+

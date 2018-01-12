@@ -1,0 +1,10 @@
+body{
+  /* background:url('./../img/ty.jpg'); */
+  /* background: red; */
+}
+.ot{
+  background: blue;
+}
+.ot .ac{
+  font-size:50px;
+}
